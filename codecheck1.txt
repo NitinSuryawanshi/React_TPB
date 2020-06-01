@@ -1,0 +1,105 @@
+<main className="container">
+          <Switch>
+            <Route path="/invoice" component={Invoice} />
+
+            <Redirect from="/" exact to="/invoice" />
+          </Switch>
+        </main>
+        
+        <ReactTable
+	          data={tableData}
+	          columns={[
+	            {
+	              Header: "Site ID",
+	              accessor: "siteId"
+	            },
+	            {
+	              Header: "Client ID",
+	              accessor: "clientId"
+	            },
+	            {
+	              Header: "Transaction Type",
+	              accessor: "transactionType"
+	            },
+	            {
+	              Header: "ID",
+	              accessor: "id"
+	            }
+	          ]}
+	          defaultPageSize={10}
+	          className="-striped -highlight"
+        />
+        
+        
+         <Table
+	          columns={this.columns}
+	          data={tableData}
+	          sortColumn={sortColumn}
+        />
+        
+        
+        {/* tabledata: [
+	      {
+	        archived: "",
+	        areaLocation: "",
+	        areaPallet: "",
+	        areaUom: "",
+	        assigned: "",
+	        clientId: "",
+	        code: "",
+	        country: "",
+	        createdDstamp: "",
+	        credit: "",
+	        currency: "",
+	        daysInMonth: "",
+	        daysReceived: "",
+	        disallowMergeRules: "",
+	        elapsedTime: "",
+	        endDstamp: "",
+	        endMonth: "",
+	        endMonthDay: "",
+	        endWeekDay: "",
+	        endWeekNumber: "",
+	        endYear: "",
+	        lengthUom: "",
+	        noRuleFound: "",
+	        numberUom: "",
+	        ownerId: "",
+	        partMonth: "",
+	        processed: "",
+	        quantity: "",
+	        receiptDstamp: "",
+	        rollbackInvoice: "",
+	        rollbackRequired: "",
+	        siteId: "",
+	        sourceId: "",
+	        sourceKey: "",
+	        startDstamp: "",
+	        startMonth: "",
+	        startMonthDay: "",
+	        startWeekDay: "",
+	        startWeekNumber: "",
+	        startYear: "",
+	        status: "",
+	        statusMessage: "",
+	        systemId: "",
+	        timeUom: "",
+	        transactionType: "",
+	        uploadedDstamp: "",
+	        userDefined: "",
+	        volumeActPallet: "",
+	        volumeActual: "",
+	        volumeFullConfig: "",
+	        volumeFullPallet: "",
+	        volumeLocation: "",
+	        volumePallet: "",
+	        volumeUom: "",
+	        weightActPallet: "",
+	        weightActual: "",
+	        weightFullConfig: "",
+	        weightFullPallet: "",
+	        weightPallet: "",
+	        weightUom: "",
+	        id: ""
+	      }
+    ]*/}

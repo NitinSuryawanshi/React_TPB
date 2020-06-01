@@ -1,0 +1,100 @@
+{
+        code: "Storage",
+        total: 160,
+        client: "NIKE"
+      },
+      {
+        code: "Picking",
+        total: 260,
+        client: "NIKE"
+      },
+      {
+        code: "Putaway",
+        total: 360,
+        client: "NIKE"
+      },
+      {
+        code: "Replenishment",
+        total: 460,
+        client: "NIKE"
+      },
+      {
+        code: "Storage",
+        total: 160,
+        client: "ADIDAS"
+      }
+      
+      
+      var activityByCodeStorage = this.state.invoicebycode
+            .filter(e => e.code === "Storage")
+            .map(e => e.total)
+            .reduce((acc, score) => acc + score, 0);
+      
+          var activityByCodeIQC = this.state.invoicebycode
+            .filter(e => e.code === "IQC")
+            .map(jedi => jedi.total)
+            .reduce((acc, score) => acc + score, 0);
+          var activityByCodeOrder = this.state.invoicebycode
+            .filter(e => e.code === "ORDER")
+            .map(jedi => jedi.total)
+            .reduce((acc, score) => acc + score, 0);
+      
+          var activityByCodeInventory = this.state.invoicebycode
+            .filter(e => e.code === "INVENTORY")
+            .map(jedi => jedi.total)
+            .reduce((acc, score) => acc + score, 0);
+      
+          var activityByCodeReceipt = this.state.invoicebycode
+            .filter(e => e.code === "RECEIPT")
+            .map(jedi => jedi.total)
+            .reduce((acc, score) => acc + score, 0);
+      
+          console.log("activityByCodeStorage", activityByCodeStorage);
+          console.log("activityByCodeIQC", activityByCodeIQC);
+          console.log("activityByCodeOrder", activityByCodeOrder);
+          console.log("activityByCodeInventory", activityByCodeInventory);
+          console.log("activityByCodeReceipt", activityByCodeReceipt);
+      
+          var totalActivity =
+            activityByCodeStorage +
+            activityByCodeIQC +
+            activityByCodeOrder +
+            activityByCodeInventory +
+            activityByCodeReceipt;
+      
+          var Label = {
+            labels: [
+              ((activityByCodeIQC / totalActivity) * 100).toFixed() + "%",
+              ((activityByCodeOrder / totalActivity) * 100).toFixed() + "%",
+              ((activityByCodeInventory / totalActivity) * 100).toFixed() + "%",
+              ((activityByCodeReceipt / totalActivity) * 100).toFixed() + "%",
+              ((activityByCodeStorage / totalActivity) * 100).toFixed() + "%"
+            ],
+            series: [
+              ((activityByCodeIQC / totalActivity) * 100).toFixed(),
+              ((activityByCodeOrder / totalActivity) * 100).toFixed(),
+              ((activityByCodeInventory / totalActivity) * 100).toFixed(),
+              ((activityByCodeReceipt / totalActivity) * 100).toFixed(),
+              {
+                className: "ct-series-e",
+                data: ((activityByCodeStorage / totalActivity) * 100).toFixed()
+              }
+            ]
+          };
+          console.log(
+            "Activity by Code 67fsadfLogic 7987978activityByCode",
+            activityByCodeStorage
+          );
+          this.setState({ dataPie: Label });
+      
+          console.log("Activity by Code 67fsadfLogic activityByCode", totalActivity);
+
+
+
+<div id="chartPreferences" className="ct-chart">
+                      <ChartistGraph
+                        data={this.state.dataPie}
+                        title="Activity"
+                        type="Pie"
+                      />
+                    </div>

@@ -1,0 +1,7 @@
+1) Count of transactions
+2) Count of transactions based on client
+3) Count of processed transactions
+4) Count of processed transactions based on client
+5) Count of transactions under processing
+6) Count of transactions ready for invoicing
+7)

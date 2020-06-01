@@ -1,0 +1,63 @@
+transdata: [
+      {
+        id: "10",
+        id: {
+          invoice: "",
+          clientId: "",
+          invoiceType: ""
+        },
+        adminContact: "",
+        approvedBy: "",
+        approvedDstamp: "",
+        archived: "",
+        blanketBackupNumber: 0,
+        blanketContractId: "",
+        calendarId: "",
+        contractBackupNumber: 0,
+        contractId: "",
+        contractRenewalNumber: 0,
+        createdDstamp: "",
+        currency: "",
+        finalInvoice: "",
+        fromDstamp: "",
+        invoiceContact: "",
+        invoiceDstamp: "",
+        invoiceGroupBackupNumber: "",
+        invoiceGroupId: "",
+        jdeUploaded: "",
+        lastPrintedDstamp: "",
+        lastUpdateBy: "",
+        lastUpdateDstamp: "",
+        notes: "",
+        originalInvoice: "",
+        report: "",
+        sageUploaded: "",
+        sourceInvoice: "",
+        status: "",
+        toDstamp: "",
+        totalPrice: "",
+        abInvoiceLines: [
+          {
+            id: {
+              invoice: "",
+              clientId: "",
+              invoiceType: "",
+              lineId: 1
+            },
+            archived: "",
+            createdDstamp: "",
+            description: "",
+            invoiceDescription: "",
+            notes: "",
+            originalTotalPrice: 0,
+            pricePer: "",
+            ruleBackupNumber: 0,
+            ruleKey: 0,
+            ruleType: "",
+            totalPrice: "",
+            transactionType: "",
+            valuePriced: 0
+          }
+        ]
+      }
+    ]
